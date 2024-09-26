@@ -1,0 +1,23 @@
+Table Cargoships {
+  Id int [pk]
+  name varchar  [note: "ships"]
+  haulerId int
+}
+
+Table Haulers {
+  Id int [pk]
+  name varchar 
+  dockId int
+}
+
+
+Table Dock {
+  Id int [pk]
+  location varchar 
+  maxCapacity int
+}
+
+ref: Haulers.Id < Cargoships.haulerId
+ref: Dock.Id < Haulers.dockId
+
+
